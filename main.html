@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiaCoffee</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var map = L.map('map', {
+                dragging: false,
+                scrollWheelZoom: false,
+                doubleClickZoom: false,
+                boxZoom: false,
+                tap: false
+            }).setView([40.3886813, 49.8720688], 15);
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>'
+            }).addTo(map);
+
+            L.marker([40.3886813, 49.8720688], {icon: L.icon({
+                    iconUrl: 'images/marker-icon-red.png',
+                    iconSize: [41, 41],
+                    iconAnchor: [30, 41],
+                    popupAnchor: [-8, -34],
+                })}).addTo(map)
+                .bindPopup('Our Location')
+                .openPopup();
+
+            map.once('click', function() {
+                map.dragging.enable();
+                map.scrollWheelZoom.enable();
+                map.doubleClickZoom.enable();
+                map.boxZoom.enable();
+                map.tap.enable();
+            });
+        });
+    </script>
+</head>
+
+<body>
+<!-- Header Section -->
+<header>
+    <div class="header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 20px;">
+        <div class="burger-menu" style="margin-right: 20px;">
+            <div class="menu-icon">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="language-selector" style="margin-right: auto;">EN</div>
+        <div class="social-icons" style="display: flex; gap: 15px;">
+            <a href="#" target="_blank"><img src="images/facebook-icon.png" alt="Facebook Icon" class="social-icon" style="width: 25px; height: 25px;"></a>
+            <a href="#" target="_blank"><img src="images/instagram-icon.png" alt="Instagram Icon" class="social-icon" style="width: 25px; height: 25px;"></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+</header>
+
+<!-- Logo and Name Section -->
+<section class="hero">
+    <div class="hero-content">
+        <img src="images/logo.png" alt="MiaCoffee Logo" class="logo">
+        <h1 class="coffee-name">MiaCoffee</h1>
+    </div>
+</section>
+
+<!-- Location Section -->
+<section class="location">
+    <div id="map" style="width: 100%; height: 600px;"></div>
+</section>
+
+<!-- Menu Gallery Section -->
+<section class="menu-gallery">
+    <h2 id="menu-gallery">Menu & Products</h2>
+    <div class="menu-slider" style="position: relative; overflow: hidden; width: 100%; margin: 0 auto;">
+        <button class="slider-prev" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 2; background-color: rgba(0, 0, 0, 0.5); color: #fff; border: none; padding: 1rem; cursor: pointer;">&#8249;</button>
+        <div class="menu-items" style="display: flex; transition: transform 0.5s ease-in-out;">
+            <img src="images/menu-item1.jpg" alt="Menu Item 1" class="menu-item" style="width: 300px; height: auto; margin-right: 20px; transition: transform 0.3s ease;">
+            <img src="images/menu-item2.jpg" alt="Menu Item 2" class="menu-item" style="width: 300px; height: auto; margin-right: 20px; transition: transform 0.3s ease;">
+            <img src="images/menu-item3.jpg" alt="Menu Item 3" class="menu-item" style="width: 300px; height: auto; margin-right: 20px; transition: transform 0.3s ease;">
+            <img src="images/menu-item4.jpg" alt="Menu Item 4" class="menu-item" style="width: 300px; height: auto; margin-right: 20px; transition: transform 0.3s ease;">
+            <img src="images/menu-item5.jpg" alt="Menu Item 5" class="menu-item" style="width: 300px; height: auto; margin-right: 20px; transition: transform 0.3s ease;">
+            <img src="images/menu-item6.jpg" alt="Menu Item 6" class="menu-item" style="width: 300px; height: auto; margin-right: 20px; transition: transform 0.3s ease;">
+            <img src="images/menu-item7.jpg" alt="Menu Item 7" class="menu-item" style="width: 300px; height: auto; margin-right: 20px; transition: transform 0.3s ease;">
+        </div>
+        <button class="slider-next" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); z-index: 2; background-color: rgba(0, 0, 0, 0.5); color: #fff; border: none; padding: 1rem; cursor: pointer;">&#8250;</button>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuItems = document.querySelector('.menu-items');
+        const prevButton = document.querySelector('.slider-prev');
+        const nextButton = document.querySelector('.slider-next');
+        const totalItems = menuItems.children.length;
+        const itemWidth = 320; // ширина элемента с учетом отступа
+        let currentIndex = 1;
+
+        // Клонируем первый и последний элементы для зацикливания
+        const firstClone = menuItems.children[0].cloneNode(true);
+        const lastClone = menuItems.children[totalItems - 1].cloneNode(true);
+        menuItems.appendChild(firstClone);
+        menuItems.insertBefore(lastClone, menuItems.children[0]);
+
+        // Позиционируем карусель на первом реальном элементе
+        menuItems.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+
+        function slideMenuItems(direction) {
+            if (direction === 'next') {
+                currentIndex++;
+                menuItems.style.transition = 'transform 0.5s ease-in-out';
+                menuItems.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+                if (currentIndex >= totalItems + 1) {
+                    setTimeout(() => {
+                        menuItems.style.transition = 'none';
+                        currentIndex = 1;
+                        menuItems.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+                    }, 500);
+                }
+            } else {
+                currentIndex--;
+                menuItems.style.transition = 'transform 0.5s ease-in-out';
+                menuItems.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+                if (currentIndex <= 0) {
+                    setTimeout(() => {
+                        menuItems.style.transition = 'none';
+                        currentIndex = totalItems;
+                        menuItems.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+                    }, 500);
+                }
+            }
+        }
+
+        nextButton.addEventListener('click', () => {
+            slideMenuItems('next');
+        });
+
+        prevButton.addEventListener('click', () => {
+            slideMenuItems('prev');
+        });
+
+        // Увеличение изображения при наведении
+        const items = document.querySelectorAll('.menu-item');
+        items.forEach(item => {
+            item.addEventListener('mouseover', () => {
+                item.style.transform = 'scale(1.1)';
+            });
+            item.addEventListener('mouseout', () => {
+                item.style.transform = 'scale(1)';
+            });
+        });
+    });
+</script>
+
+<!-- Interior Gallery Section -->
+<section class="interior-gallery">
+    <h2 id="interior-gallery">Our Interior</h2>
+    <div class="interior-slider">
+        <button class="slider-prev">&#8249;</button>
+        <div class="interior-items">
+            <img src="images/interior1.jpg" alt="Interior Photo 1">
+            <img src="images/interior2.jpg" alt="Interior Photo 2">
+            <img src="images/interior3.jpg" alt="Interior Photo 3">
+            <img src="images/interior4.jpg" alt="Interior Photo 4">
+        </div>
+        <button class="slider-next">&#8250;</button>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-content">
+        <h3>Contact Us</h3>
+        <p>Phone: +123 456 789</p>
+        <p>Email: contact@miacoffee.com</p>
+        <p>Address: 123 Coffee St, Coffee City</p>
+    </div>
+</footer>
+</body>
+
+</html>
