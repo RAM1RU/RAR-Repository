@@ -81,7 +81,7 @@
 <!-- Menu Gallery Section -->
 <section class="menu-gallery">
     <h2 id="menu-gallery">Menu & Products</h2>
-    <div class="menu-slider" style="position: relative; overflow: hidden; width: 100%; margin: 0 auto;">
+    <div class="menu-slider-wrapper" style="position: relative; overflow: hidden; max-width: 1600px; margin: 0 auto;">
         <button class="slider-prev" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 2; background-color: rgba(0, 0, 0, 0.5); color: #fff; border: none; padding: 1rem; cursor: pointer;">&#8249;</button>
         <div class="menu-items" style="display: flex; transition: transform 0.5s ease-in-out;">
             <img src="images/menu-item1.jpg" alt="Menu Item 1" class="menu-item" style="width: 300px; height: auto; margin-right: 20px; transition: transform 0.3s ease;">
@@ -92,7 +92,7 @@
             <img src="images/menu-item6.jpg" alt="Menu Item 6" class="menu-item" style="width: 300px; height: auto; margin-right: 20px; transition: transform 0.3s ease;">
             <img src="images/menu-item7.jpg" alt="Menu Item 7" class="menu-item" style="width: 300px; height: auto; margin-right: 20px; transition: transform 0.3s ease;">
         </div>
-        <button class="slider-next" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); z-index: 2; background-color: rgba(0, 0, 0, 0.5); color: #fff; border: none; padding: 1rem; cursor: pointer;">&#8250;</button>
+        <button class="slider-next" style="position: absolute; right: 30px; top: 50%; transform: translateY(-50%); z-index: 2; background-color: rgba(0, 0, 0, 0.5); color: #fff; border: none; padding: 1rem; cursor: pointer;">&#8250;</button>
     </div>
 </section>
 
@@ -103,41 +103,23 @@
         const nextButton = document.querySelector('.slider-next');
         const totalItems = menuItems.children.length;
         const itemWidth = 320; // ширина элемента с учетом отступа
-        let currentIndex = 1;
-
-        // Клонируем первый и последний элементы для зацикливания
-        const firstClone = menuItems.children[0].cloneNode(true);
-        const lastClone = menuItems.children[totalItems - 1].cloneNode(true);
-        menuItems.appendChild(firstClone);
-        menuItems.insertBefore(lastClone, menuItems.children[0]);
-
-        // Позиционируем карусель на первом реальном элементе
-        menuItems.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        let currentIndex = 0; // Начинаем с первого реального элемента
 
         function slideMenuItems(direction) {
             if (direction === 'next') {
                 currentIndex++;
-                menuItems.style.transition = 'transform 0.5s ease-in-out';
-                menuItems.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-                if (currentIndex >= totalItems + 1) {
-                    setTimeout(() => {
-                        menuItems.style.transition = 'none';
-                        currentIndex = 1;
-                        menuItems.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-                    }, 500);
+                if (currentIndex + 4 >= totalItems) {
+                    currentIndex = 0; // Если дошли до конца списка, переходим к началу
                 }
             } else {
                 currentIndex--;
-                menuItems.style.transition = 'transform 0.5s ease-in-out';
-                menuItems.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-                if (currentIndex <= 0) {
-                    setTimeout(() => {
-                        menuItems.style.transition = 'none';
-                        currentIndex = totalItems;
-                        menuItems.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-                    }, 500);
+                if (currentIndex < 0) {
+                    currentIndex = totalItems - 5; // Если дошли до начала списка, переходим к концу
                 }
             }
+
+            menuItems.style.transition = 'transform 0.5s ease-in-out';
+            menuItems.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
         }
 
         nextButton.addEventListener('click', () => {
@@ -160,6 +142,7 @@
         });
     });
 </script>
+
 
 <!-- Interior Gallery Section -->
 <section class="interior-gallery">
