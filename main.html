@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MiaCoffee</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
     <script src="script.js" defer></script>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
@@ -68,7 +72,7 @@
 <!-- Logo and Name Section -->
 <section class="hero">
     <div class="hero-content">
-        <img src="images/logo.png" alt="MiaCoffee Logo" class="logo">
+        <img src="Images/logo.png" alt="MiaCoffee Logo" class="logo">
         <h1 class="coffee-name">MiaCoffee</h1>
     </div>
 </section>
@@ -81,68 +85,44 @@
 <!-- Menu Gallery Section -->
 <section class="menu-gallery">
     <h2 id="menu-gallery">Menu & Products</h2>
-    <div class="menu-slider-wrapper" style="position: relative; overflow: hidden; max-width: 1600px; margin: 0 auto;">
-        <button class="slider-prev" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 2; background-color: rgba(0, 0, 0, 0.5); color: #fff; border: none; padding: 1rem; cursor: pointer;">&#8249;</button>
-        <div class="menu-items" style="display: flex; transition: transform 0.5s ease-in-out;">
-            <img src="images/menu-item1.jpg" alt="Menu Item 1" class="menu-item" style="width: 300px; height: auto; margin-right: 20px; transition: transform 0.3s ease;">
-            <img src="images/menu-item2.jpg" alt="Menu Item 2" class="menu-item" style="width: 300px; height: auto; margin-right: 20px; transition: transform 0.3s ease;">
-            <img src="images/menu-item3.jpg" alt="Menu Item 3" class="menu-item" style="width: 300px; height: auto; margin-right: 20px; transition: transform 0.3s ease;">
-            <img src="images/menu-item4.jpg" alt="Menu Item 4" class="menu-item" style="width: 300px; height: auto; margin-right: 20px; transition: transform 0.3s ease;">
-            <img src="images/menu-item5.jpg" alt="Menu Item 5" class="menu-item" style="width: 300px; height: auto; margin-right: 20px; transition: transform 0.3s ease;">
-            <img src="images/menu-item6.jpg" alt="Menu Item 6" class="menu-item" style="width: 300px; height: auto; margin-right: 20px; transition: transform 0.3s ease;">
-            <img src="images/menu-item7.jpg" alt="Menu Item 7" class="menu-item" style="width: 300px; height: auto; margin-right: 20px; transition: transform 0.3s ease;">
+    <div class="menu-slider-wrapper" style="width: 100%; margin: 0 auto;">
+        <div class="menu-items">
+            <img src="images/menu-item1.jpg" alt="Menu Item 1" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+            <img src="images/menu-item2.jpg" alt="Menu Item 2" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+            <img src="images/menu-item3.jpg" alt="Menu Item 3" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+            <img src="images/menu-item4.jpg" alt="Menu Item 4" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+            <img src="images/menu-item5.jpg" alt="Menu Item 5" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+            <img src="images/menu-item6.jpg" alt="Menu Item 6" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+            <img src="images/menu-item7.jpg" alt="Menu Item 7" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
         </div>
-        <button class="slider-next" style="position: absolute; right: 30px; top: 50%; transform: translateY(-50%); z-index: 2; background-color: rgba(0, 0, 0, 0.5); color: #fff; border: none; padding: 1rem; cursor: pointer;">&#8250;</button>
     </div>
 </section>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuItems = document.querySelector('.menu-items');
-        const prevButton = document.querySelector('.slider-prev');
-        const nextButton = document.querySelector('.slider-next');
-        const totalItems = menuItems.children.length;
-        const itemWidth = 320; // ширина элемента с учетом отступа
-        let currentIndex = 0; // Начинаем с первого реального элемента
-
-        function slideMenuItems(direction) {
-            if (direction === 'next') {
-                currentIndex++;
-                if (currentIndex + 4 >= totalItems) {
-                    currentIndex = 0; // Если дошли до конца списка, переходим к началу
+    $(document).ready(function(){
+        $('.menu-items').slick({
+            infinite: true,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            prevArrow: '<button class="slider-prev" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 2; background-color: rgba(0, 0, 0, 0.5); color: #fff; border: none; padding: 1rem; cursor: pointer;">&#8249;</button>',
+            nextArrow: '<button class="slider-next" style="position: absolute; right: 30px; top: 50%; transform: translateY(-50%); z-index: 2; background-color: rgba(0, 0, 0, 0.5); color: #fff; border: none; padding: 1rem; cursor: pointer;">&#8250;</button>',
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 2
+                    }
                 }
-            } else {
-                currentIndex--;
-                if (currentIndex < 0) {
-                    currentIndex = totalItems - 5; // Если дошли до начала списка, переходим к концу
-                }
-            }
-
-            menuItems.style.transition = 'transform 0.5s ease-in-out';
-            menuItems.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-        }
-
-        nextButton.addEventListener('click', () => {
-            slideMenuItems('next');
-        });
-
-        prevButton.addEventListener('click', () => {
-            slideMenuItems('prev');
-        });
-
-        // Увеличение изображения при наведении
-        const items = document.querySelectorAll('.menu-item');
-        items.forEach(item => {
-            item.addEventListener('mouseover', () => {
-                item.style.transform = 'scale(1.1)';
-            });
-            item.addEventListener('mouseout', () => {
-                item.style.transform = 'scale(1)';
-            });
+            ]
         });
     });
 </script>
-
 
 <!-- Interior Gallery Section -->
 <section class="interior-gallery">
