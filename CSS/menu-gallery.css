@@ -1,0 +1,20 @@
+/* Menu Gallery Section (class = "menu-gallery") */
+.menu-gallery {
+    padding: 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.menu-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.menu-items img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}

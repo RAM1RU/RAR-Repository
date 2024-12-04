@@ -1,0 +1,24 @@
+/* Hero Section (class = "hero") */
+.hero {
+    background-image: url('../Images/banner.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    margin-top: 70px;
+}
+
+.hero-content .logo {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+}
+
+.hero-content .coffee-name {
+    font-size: 3rem;
+    margin-top: 1rem;
+}

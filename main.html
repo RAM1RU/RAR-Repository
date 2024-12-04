@@ -5,48 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MiaCoffee</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="CSS/general.css">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/hero.css">
+    <link rel="stylesheet" href="CSS/location.css">
+    <link rel="stylesheet" href="CSS/menu-gallery.css">
+    <link rel="stylesheet" href="CSS/interior-gallery.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/slide-buttons.css">
+    <link rel="stylesheet" href="CSS/nav-menu.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
-    <script src="script.js" defer></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var map = L.map('map', {
-                dragging: false,
-                scrollWheelZoom: false,
-                doubleClickZoom: false,
-                boxZoom: false,
-                tap: false
-            }).setView([40.3886813, 49.8720688], 15);
-
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>'
-            }).addTo(map);
-
-            L.marker([40.3886813, 49.8720688], {icon: L.icon({
-                    iconUrl: 'images/marker-icon-red.png',
-                    iconSize: [41, 41],
-                    iconAnchor: [30, 41],
-                    popupAnchor: [-8, -34],
-                })}).addTo(map)
-                .bindPopup('Our Location')
-                .openPopup();
-
-            map.once('click', function() {
-                map.dragging.enable();
-                map.scrollWheelZoom.enable();
-                map.doubleClickZoom.enable();
-                map.boxZoom.enable();
-                map.tap.enable();
-            });
-        });
-    </script>
+    <script src="JS/map.js" defer></script>
+    <script src="JS/menu-carousel.js" defer></script>
+    <script src="JS/script.js" defer></script>
 </head>
 
 <body>
@@ -87,42 +63,16 @@
     <h2 id="menu-gallery">Menu & Products</h2>
     <div class="menu-slider-wrapper" style="width: 100%; margin: 0 auto;">
         <div class="menu-items">
-            <img src="images/menu-item1.jpg" alt="Menu Item 1" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
-            <img src="images/menu-item2.jpg" alt="Menu Item 2" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
-            <img src="images/menu-item3.jpg" alt="Menu Item 3" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
-            <img src="images/menu-item4.jpg" alt="Menu Item 4" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
-            <img src="images/menu-item5.jpg" alt="Menu Item 5" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
-            <img src="images/menu-item6.jpg" alt="Menu Item 6" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
-            <img src="images/menu-item7.jpg" alt="Menu Item 7" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+            <img src="Images/menu-item1.jpg" alt="Menu Item 1" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+            <img src="Images/menu-item2.jpg" alt="Menu Item 2" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+            <img src="Images/menu-item3.jpg" alt="Menu Item 3" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+            <img src="Images/menu-item4.jpg" alt="Menu Item 4" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+            <img src="Images/menu-item5.jpg" alt="Menu Item 5" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+            <img src="Images/menu-item6.jpg" alt="Menu Item 6" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+            <img src="Images/menu-item7.jpg" alt="Menu Item 7" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
         </div>
     </div>
 </section>
-
-<script>
-    $(document).ready(function(){
-        $('.menu-items').slick({
-            infinite: true,
-            slidesToShow: 5,
-            slidesToScroll: 1,
-            prevArrow: '<button class="slider-prev" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 2; background-color: rgba(0, 0, 0, 0.5); color: #fff; border: none; padding: 1rem; cursor: pointer;">&#8249;</button>',
-            nextArrow: '<button class="slider-next" style="position: absolute; right: 30px; top: 50%; transform: translateY(-50%); z-index: 2; background-color: rgba(0, 0, 0, 0.5); color: #fff; border: none; padding: 1rem; cursor: pointer;">&#8250;</button>',
-            responsive: [
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 3
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 2
-                    }
-                }
-            ]
-        });
-    });
-</script>
 
 <!-- Interior Gallery Section -->
 <section class="interior-gallery">

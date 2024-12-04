@@ -1,0 +1,20 @@
+/* Interior Gallery Section (class = "interior-gallery") */
+.interior-gallery {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.interior-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.interior-items img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}

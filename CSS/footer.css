@@ -1,0 +1,11 @@
+/* Footer Section (class = "footer-content") */
+footer {
+    background-color: #304c5a;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+}

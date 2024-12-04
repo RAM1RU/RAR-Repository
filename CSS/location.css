@@ -1,0 +1,12 @@
+/* Location Section (class = "location") */
+.location {
+    padding: 0 30px 0 30px;
+    background-color: #048280;
+    text-align: center;
+}
+
+.location a {
+    color: #304c5a;
+    text-decoration: none;
+    font-weight: bold;
+}

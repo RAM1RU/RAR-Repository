@@ -1,0 +1,15 @@
+/* Button Styles */
+.slider-prev,
+.slider-next {
+    background-color: #06bcb3;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.slider-prev:hover,
+.slider-next:hover {
+    background-color: #048280;
+}
