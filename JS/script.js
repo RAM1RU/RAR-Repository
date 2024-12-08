@@ -25,10 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (navMenu.style.left === '0px') {
             navMenu.style.left = '-300px';
             menuIcon.classList.remove('open');
-            menuIcon.innerHTML = '';
-            menuIcon.appendChild(document.createElement('div')).classList.add('line');
-            menuIcon.appendChild(document.createElement('div')).classList.add('line');
-            menuIcon.appendChild(document.createElement('div')).classList.add('line');
+            menuIcon.innerHTML = '☰';
         } else {
             navMenu.style.left = '0';
             menuIcon.classList.add('open');
@@ -40,10 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!burgerMenu.contains(event.target) && !navMenu.contains(event.target)) {
             navMenu.style.left = '-300px';
             menuIcon.classList.remove('open');
-            menuIcon.innerHTML = '';
-            menuIcon.appendChild(document.createElement('div')).classList.add('line');
-            menuIcon.appendChild(document.createElement('div')).classList.add('line');
-            menuIcon.appendChild(document.createElement('div')).classList.add('line');
+            menuIcon.innerHTML = '☰';
         }
     });
 });

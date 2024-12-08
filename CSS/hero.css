@@ -1,6 +1,6 @@
 /* Hero Section (class = "hero") */
 .hero {
-    background-image: url('../Images/banner.jpeg');
+    background-image: url('../Images/banner.jpg');
     background-size: cover;
     background-position: center;
     height: 90vh;
@@ -19,6 +19,7 @@
 }
 
 .hero-content .coffee-name {
+    font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
     margin-top: 1rem;
 }

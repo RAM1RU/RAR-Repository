@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="JS/interior-gallery.js" defer></script>
     <script src="JS/map.js" defer></script>
     <script src="JS/menu-carousel.js" defer></script>
     <script src="JS/script.js" defer></script>
@@ -30,16 +31,12 @@
 <header>
     <div class="header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 20px;">
         <div class="burger-menu" style="margin-right: 20px;">
-            <div class="menu-icon">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
+            <div class="menu-icon" style="font-size: 24px; cursor: pointer;">☰</div>
         </div>
         <div class="language-selector" style="margin-right: auto;">EN</div>
         <div class="social-icons" style="display: flex; gap: 15px;">
-            <a href="#" target="_blank"><img src="images/facebook-icon.png" alt="Facebook Icon" class="social-icon" style="width: 25px; height: 25px;"></a>
-            <a href="#" target="_blank"><img src="images/instagram-icon.png" alt="Instagram Icon" class="social-icon" style="width: 25px; height: 25px;"></a>
+            <a href="#" target="_blank"><img src="Images/facebook-icon.png" alt="Facebook Icon" class="social-icon" style="width: 25px; height: 25px;"></a>
+            <a href="https://www.instagram.com/coffeemia.az?igsh=MTlmeTduNG9qMzk2aQ==" target="_blank"><img src="Images/instagram-icon.png" alt="Instagram Icon" class="social-icon" style="width: 25px; height: 25px;"></a>
             <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
     </div>
@@ -49,7 +46,7 @@
 <section class="hero">
     <div class="hero-content">
         <img src="Images/logo.png" alt="MiaCoffee Logo" class="logo">
-        <h1 class="coffee-name">MiaCoffee</h1>
+        <h1 class="coffee-name">Mia Coffee</h1>
     </div>
 </section>
 
@@ -59,8 +56,16 @@
 </section>
 
 <!-- Menu Gallery Section -->
-<section class="menu-gallery">
-    <h2 id="menu-gallery">Menu & Products</h2>
+<section id="menu-gallery" class="menu-gallery">
+    <!-- Заголовок h1 -->
+    <h1 style="text-align: center; margin: 10px 0;">Menu & Positions</h1>
+
+    <!-- Разделительная строка с текстом h3 -->
+    <h3 style="text-align: center; margin: 10px 0; font-weight: normal;">Discover the variety of menu items that we offer</h3>
+
+    <!-- Разделительная строка с текстом h2 -->
+    <h2 style="text-align: center; margin: 20px 0;">ー Recommendations from our visitors ー</h2>
+
     <div class="menu-slider-wrapper" style="width: 100%; margin: 0 auto;">
         <div class="menu-items">
             <img src="Images/menu-item1.jpg" alt="Menu Item 1" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
@@ -75,18 +80,49 @@
 </section>
 
 <!-- Interior Gallery Section -->
-<section class="interior-gallery">
-    <h2 id="interior-gallery">Our Interior</h2>
-    <div class="interior-slider">
-        <button class="slider-prev">&#8249;</button>
-        <div class="interior-items">
-            <img src="images/interior1.jpg" alt="Interior Photo 1">
-            <img src="images/interior2.jpg" alt="Interior Photo 2">
-            <img src="images/interior3.jpg" alt="Interior Photo 3">
-            <img src="images/interior4.jpg" alt="Interior Photo 4">
+<section id="interior-gallery" class="interior-gallery">
+    <!-- Заголовок h1 -->
+    <h1 style="text-align: center; margin: 5px 0;">Interior</h1>
+
+    <!-- Разделительная строка с текстом h3 -->
+    <h3 style="text-align: center; margin: 5px 0; font-weight: normal;">Elegant interior for a comfortable stay and a wonderful time </h3>
+
+    <!-- Разделительная строка с текстом h2 -->
+    <h2 style="text-align: center; margin: 10px 0;">ー Interior Review ー</h2>
+
+    <div id="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item" data-bg="images/interior1.jpg">
+                <img src="Images/interior1.jpg" alt="Interior Photo 1">
+                <div class="carousel-text">
+                    <h2>Cozy Space</h2>
+                    <p>Relax in our warm and inviting space.</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bg="images/interior2.jpg">
+                <img src="Images/interior2.jpg" alt="Interior Photo 2">
+                <div class="carousel-text">
+                    <h2>Modern Design</h2>
+                    <p>Experience our modern and stylish decor.</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bg="images/interior3.jpg">
+                <img src="Images/interior3.jpg" alt="Interior Photo 3">
+                <div class="carousel-text">
+                    <h2>Comfort Zone</h2>
+                    <p>A perfect spot for coffee and relaxation.</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bg="images/interior4.jpg">
+                <img src="Images/interior4.jpg" alt="Interior Photo 4">
+                <div class="carousel-text">
+                    <h2>Ambient Atmosphere</h2>
+                    <p>Enjoy the perfect blend of light and ambiance.</p>
+                </div>
+            </div>
         </div>
-        <button class="slider-next">&#8250;</button>
     </div>
+    <div id="background-overlay"></div>
 </section>
 
 <!-- Footer Section -->

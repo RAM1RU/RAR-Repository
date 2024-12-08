@@ -1,6 +1,6 @@
 /* Header Section  (class="header-container") */
 header {
-    background-color: #048280;
+    background-color: #0a292b;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -22,17 +22,27 @@ header {
 
 .burger-menu {
     margin-right: 20px;
+    padding: 3px 0 2px 5px;
+    min-height: 35px;
+    min-width: 35px;
 }
 
 .menu-icon {
-    cursor: pointer;
+    display: flex; /* Центрирует содержимое */
+    align-items: center;
+    justify-content: center;
+    width: 35px; /* Размер контейнера */
+    height: 35px;
+    cursor: pointer; /* Указывает, что это интерактивный элемент */
+}
+.menu-icon img {
+    width: 100%; /* Убедитесь, что изображение масштабируется внутри контейнера */
+    height: 100%;
+    object-fit: contain; /* Для корректного отображения */
 }
 
-.menu-icon .line {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 5px 0;
+.menu-icon.open {
+    font-size: 22px;
 }
 
 .language-selector {

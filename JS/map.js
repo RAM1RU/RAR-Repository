@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     L.marker([40.3886813, 49.8720688], {
         icon: L.icon({
-            iconUrl: 'images/marker-icon-red.png',
+            iconUrl: 'Images/marker-icon-red.png',
             iconSize: [41, 41],
             iconAnchor: [30, 41],
             popupAnchor: [-8, -34],

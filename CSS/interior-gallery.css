@@ -1,20 +1,93 @@
-/* Interior Gallery Section (class = "interior-gallery") */
-.interior-gallery {
-    padding: 2rem;
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
-.interior-slider {
+/* Основные стили */
+#carousel-container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    height: 70vh;
+    overflow: hidden;
+    position: relative;
 }
 
-.interior-items img {
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
+.carousel {
+    display: flex;
+    transition: transform 1s ease;
+    position: relative;
+}
+
+.carousel-item {
+    flex: 0 0 650px; /* Увеличенный размер фото */
+    margin: 0 50px 0 50px; /* Пространство между фото */
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 550px; /* Высота изображений */
+    border-radius: 15px;
+    object-fit: cover; /* Соотношение сторон сохраняется */
+    transition: transform 0.3s ease;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.1); /* Увеличение фото при наведении */
+}
+
+.carousel-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Фон текста */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-item:hover .carousel-text {
+    opacity: 1; /* Текст появляется при наведении */
+}
+
+#background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Images/interior-default.jpeg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4); /* Затемненный фон */
+    transition: opacity 0.1s ease;
+}
+
+
+h1, h2, h3 {
+    font-family: 'Arial Narrow', sans-serif; /* Настройка шрифта */
+    margin: 10px 0;
+}
+
+h1 {
+    font-size: 4rem; /* Размер текста */
+    font-weight: bold; /* Жирный текст */
+    color: #ffffff; /* Белый цвет для контраста */
+    text-align: center; /* Центрируем заголовок */
+    margin-top: 30px; /* Отступ от карусели */
+    text-transform: uppercase; /* Все буквы заглавные */
+    letter-spacing: 2px; /* Расстояние между буквами */
+}
+
+h3 {
+    font-size: 18px; /* Размер шрифта для h3 */
+    color: white; /* Серый цвет текста */
+    font-weight: normal; /* Обычный вес текста */
+}
+
+h2 {
+    font-size: 20px; /* Размер шрифта для h2 */
+    text-transform: uppercase; /* Текст в верхнем регистре */
 }

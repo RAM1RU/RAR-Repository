@@ -1,8 +1,16 @@
 /* Menu Gallery Section (class = "menu-gallery") */
 .menu-gallery {
     padding: 2rem;
-    background-color: #fff;
+    background-color: #0a1e1d;
     text-align: center;
+}
+
+.menu-gallery img {
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.menu-gallery img:hover {
+    transform: scale(1.1); /* Scale the image on hover */
 }
 
 .menu-slider {
@@ -17,4 +25,25 @@
     height: 150px;
     object-fit: cover;
     border-radius: 10px;
+}
+
+h1, h2, h3 {
+    font-family: 'Arial Narrow', sans-serif; /* Настройка шрифта */
+    margin: 10px 0;
+}
+
+h1 {
+    font-size: 40px; /* Размер шрифта для h1 */
+    font-weight: bold; /* Жирный текст */
+}
+
+h3 {
+    font-size: 18px; /* Размер шрифта для h3 */
+    color: white; /* Серый цвет текста */
+    font-weight: normal; /* Обычный вес текста */
+}
+
+h2 {
+    font-size: 20px; /* Размер шрифта для h2 */
+    text-transform: uppercase; /* Текст в верхнем регистре */
 }
