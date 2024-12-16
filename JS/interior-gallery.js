@@ -23,6 +23,17 @@ document.addEventListener('DOMContentLoaded', function () {
         overlay.style.opacity = '1';
     }
 
+    function updateHoverTexts(language) {
+        items.forEach((item) => {
+            const title = item.querySelector('h2[data-translate]');
+            const description = item.querySelector('p[data-translate]');
+            if (title && description) {
+                title.textContent = translations[language][title.getAttribute('data-translate')];
+                description.textContent = translations[language][description.getAttribute('data-translate')];
+            }
+        });
+    }
+
     // Добавляем события для наведения на элементы
     items.forEach((item, index) => {
         item.addEventListener('mouseenter', () => {
@@ -39,5 +50,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Устанавливаем начальное положение карусели и дефолтный фон
     centerItem(currentIndex);
-    resetBackground(); // Устанавливаем дефолтный фон
+    resetBackground();
+
+    // Обновляем тексты для текущего языка при загрузке страницы
+    document.addEventListener('languageChange', (event) => {
+        updateHoverTexts(event.detail.language);
+    });
 });

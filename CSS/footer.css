@@ -1,11 +1,47 @@
 /* Footer Section (class = "footer-content") */
 footer {
-    background-color: #304c5a;
+    background-color: #0a292b;
     color: #fff;
-    padding: 2rem;
-    text-align: center;
+    padding: 3rem;
+    text-align: left;
+}
+
+.footer-content {
+}
+
+.footer-content h3 {
+    font-size: 1.8rem;
+    margin: 0 1rem;
+}
+
+.footer-columns {
+    display: flex;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.footer-column {
+    margin: 0 2rem;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.footer-column p {
+    margin: 0.3rem 0;
+    font-size: 1rem;
+}
+
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
 }
 
 .footer-content p {
-    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 1rem 1rem 0 0;
 }

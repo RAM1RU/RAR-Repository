@@ -59,3 +59,19 @@ header {
     text-decoration: none;
     font-size: 1.5rem;
 }
+
+#language-toggle {
+    background-color: transparent; /* Прозрачный фон */
+    border: none; /* Убираем границу */
+    color: white; /* Белый цвет текста */
+    font-weight: bold; /* Жирный текст */
+    font-size: 1.2rem; /* Размер шрифта */
+    cursor: pointer; /* Указываем, что это кнопка */
+    padding: 5px 10px; /* Добавляем отступы */
+    transition: color 0.3s ease, transform 0.3s ease; /* Плавные эффекты */
+}
+
+#language-toggle:hover {
+    color: #859737; /* Цвет текста при наведении (можно изменить) */
+    transform: scale(1.1); /* Лёгкое увеличение при наведении */
+}
