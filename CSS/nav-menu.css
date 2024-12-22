@@ -1,5 +1,6 @@
 /* Nav Menu Styles */
 .nav-menu {
+    font-family: 'Arial', sans-serif;
     position: fixed;
     top: 0;
     left: -300px;
@@ -13,6 +14,7 @@
 
 .nav-menu ul {
     list-style: none;
+    margin-top: 4rem;
 }
 
 .nav-menu ul li {

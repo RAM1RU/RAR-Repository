@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="CSS/general.css">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/nav-menu.css">
+    <link rel="stylesheet" href="CSS/about-us.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+    <script src="JS/script.js" defer></script>
+    <script src="JS/language.js" defer></script>
+</head>
+<body>
+<header>
+    <div class="header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 20px;">
+        <div class="burger-menu" style="margin-right: 20px;">
+            <div class="menu-icon" style="font-size: 24px; cursor: pointer;">☰</div>
+        </div>
+        <div class="language-selector" style="margin-right: auto;">
+            <button id="language-toggle">EN</button>
+        </div>
+        <div class="social-icons" style="display: flex; gap: 15px;">
+            <a href="#" target="_blank"><img src="Images/facebook-icon.png" alt="Facebook Icon" class="social-icon" style="width: 25px; height: 25px;"></a>
+            <a href="https://www.instagram.com/coffeemia.az?igsh=MTlmeTduNG9qMzk2aQ==" target="_blank"><img src="Images/instagram-icon.png" alt="Instagram Icon" class="social-icon" style="width: 25px; height: 25px;"></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main>
+    <section class="about-us">
+        <div class="about-us-overlay">
+            <h1 data-translate="aboutUsTitle">About Us</h1>
+            <p data-translate="aboutUsText">
+                For more than 10 years, our customers have been receiving all the best and perfect.
+                For many years, you have trusted us when choosing cakes and sweets
+                and other products as a gift for meaningful and important events in your life.
+                RaR Coffee is synonymous with high quality and special taste.
+            </p>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat">
+                <h2>17</h2>
+                <p data-translate="stat1">Years on Market</p>
+            </div>
+            <div class="stat">
+                <h2>3</h2>
+                <p data-translate="stat2">Production workshops</p>
+            </div>
+            <div class="stat">
+                <h2>200</h2>
+                <p data-translate="stat3">Trade Brands</p>
+            </div>
+            <div class="stat">
+                <h2>110</h2>
+                <p data-translate="stat4">Shops</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="alternating-section">
+        <div class="alternating-container">
+            <div class="alternating-item">
+                <div class="alternating-image">
+                    <img src="Images/specialist.jpg" alt="Image 1">
+                </div>
+                <div class="alternating-text">
+                    <h2 data-translate="specialistTitle">TOP-CLASS SPECIALISTS</h2>
+                    <p data-translate="specialistText">Our institution is proud of a team of top-class professionals who are true masters of their craft.
+                        Each specialist has unique experience, high qualifications and deep knowledge in his field.</p><br>
+                    <a href="#" class="join-link" data-translate="specialistButton">Join Us</a>
+                </div>
+            </div>
+            <div class="alternating-item">
+                <div class="alternating-text">
+                    <h2 data-translate="assortmentTitle">ASSORTMENT</h2>
+                    <p data-translate="assortmentText">We are proud of our diverse range, which is designed to meet the highest quality standards and the needs of our customers.
+                        In our establishment, everyone will find exactly what they need, whether it is unique products or top-level services.</p><br>
+                    <a href="#" class="join-link" data-translate="assortmentButton">View catalog</a>
+                </div>
+                <div class="alternating-image">
+                    <img src="Images/assortment.jpg" alt="Image 2">
+                </div>
+            </div>
+            <div class="alternating-item">
+                <div class="alternating-image">
+                    <img src="Images/interior3.jpg" alt="Image 3">
+                </div>
+                <div class="alternating-text">
+                    <h2 data-translate="aboutUsInteriorTitle">INTERIOR</h2>
+                    <p data-translate="aboutUsInteriorText">The interior of our establishment is created with care for each guest in order to provide comfort, coziness and aesthetic pleasure.
+                        We sought to combine modern design solutions with functionality so that each visit to us leaves only pleasant impressions.</p><br>
+                    <a href="#" class="join-link" data-translate="aboutUsInteriorButton">View catalog</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <h3 data-translate="footerTitle">Crafted with Love, Served with Care</h3>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h4 data-translate="footerContact">Contacts</h4>
+                <p data-translate="footerLocation">Azerbaijan, Baku</p>
+                <p>(+994 12) 123 45 67</p>
+                <p><a href="somegmail@gmail.com">somegmail@gmail.com</a></p>
+            </div>
+            <div class="footer-column">
+                <h4 data-translate="footerWorkHour">Working Hours</h4>
+                <p data-translate="footerWorkTime">Stores: 08:00 - 22:00</p>
+                <p data-translate="footerAddress">Address: 123 Coffee St, Coffee City</p>
+            </div>
+        </div>
+        <p>© 2024 MIA. All rights reserved.<br>
+            Developed by RAM1RU 2024</p>
+    </div>
+</footer>
+</body>
+</html>

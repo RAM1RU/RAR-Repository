@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const burgerMenu = document.querySelector('.burger-menu');
     const menuIcon = document.querySelector('.menu-icon');
     const navMenu = document.createElement('div');
@@ -13,15 +13,16 @@ document.addEventListener('DOMContentLoaded', function() {
     navMenu.style.transition = 'left 0.3s ease';
     navMenu.style.padding = '2rem';
     navMenu.innerHTML = `
-        <ul style="list-style: none;">
-            <li style="margin-bottom: 20px;"><a href="about.html" style="color: #fff; text-decoration: none; font-size: 1.5rem;">About Us</a></li>
-            <li style="margin-bottom: 20px;"><a href="#menu-gallery" style="color: #fff; text-decoration: none; font-size: 1.5rem;">Products</a></li>
-            <li><a href="#interior-gallery" style="color: #fff; text-decoration: none; font-size: 1.5rem;">Interior</a></li>
+        <ul style="list-style: none; padding: 0;">
+            <li><a href="main.html" class="burger-link" data-translate="burgerMain">Main Page</a> </li>
+            <li><a href="#menu-gallery" class="burger-link" data-translate="burgerProducts">Products</a></li>
+            <li><a href="#interior-gallery" class="burger-link" data-translate="burgerInterior">Interior</a></li>
+            <li><a href="about-us.html" class="burger-link" data-translate="burgerAboutUs">About Us</a></li>
         </ul>
     `;
     document.body.appendChild(navMenu);
 
-    burgerMenu.addEventListener('click', function() {
+    burgerMenu.addEventListener('click', function () {
         if (navMenu.style.left === '0px') {
             navMenu.style.left = '-300px';
             menuIcon.classList.remove('open');
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
         if (!burgerMenu.contains(event.target) && !navMenu.contains(event.target)) {
             navMenu.style.left = '-300px';
             menuIcon.classList.remove('open');

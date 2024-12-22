@@ -1,0 +1,151 @@
+.about-us {
+    background-image: url('../Images/about-us-background.jpg'); /* Фон */
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 70px;
+    position: relative; /* Для размещения полупрозрачного слоя */
+}
+
+.about-us-overlay {
+    background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый слой */
+    padding: 40px;
+    border-radius: 10px; /* Закругленные углы */
+    max-width: 800px; /* Ограничение ширины */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Тень */
+}
+
+.about-us-overlay h1 {
+    font-size: 2.5rem;
+    color: #333; /* Темный текст для заголовка */
+    margin-bottom: 20px;
+}
+
+.about-us-overlay p {
+    font-size: 1.2rem;
+    color: #555; /* Темно-серый текст для абзацев */
+    line-height: 1.8; /* Увеличенное расстояние между строками */
+}
+
+/* Статистика */
+.stats-section {
+    margin: 50px 0;
+    padding: 50px 20px;
+    background-color: #fff; /* Белый фон */
+    text-align: center;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    margin: 20px;
+    text-align: center;
+}
+
+.stat h2 {
+    font-size: 4.5rem;
+    color: #048280; /* Коричневый цвет */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.stat p {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+/*Ссылки на другие инфо источники*/
+.join-link {
+    display: inline-block;
+    font-size: 1rem;
+    color: #048280;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid #048280;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.join-link:hover {
+    color: #000;
+    border-color: #000;
+}
+
+/*Секции с подробной инфой*/
+.alternating-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9; /* Светлый фон */
+}
+
+.alternating-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.alternating-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Для мобильной адаптации */
+    gap: 20px;
+}
+
+.alternating-image {
+    flex: 1;
+    max-width: 50%; /* Ограничение ширины */
+    margin: 0 30px 0 30px;
+    text-align: center;
+}
+
+.alternating-image img {
+    width: 100%; /* Заполняет ширину контейнера */
+    height: 600px; /* Фиксированная высота */
+    object-fit: cover; /* Сохраняет пропорции, обрезая лишнее */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.alternating-text {
+    flex: 1;
+    max-width: 50%; /* Ограничение ширины */
+    text-align: left;
+    margin: 0 0 0 65px;
+}
+
+.alternating-text h2 {
+    font-size: 1.8rem;
+    color: #048280;
+    margin-bottom: 15px;
+}
+
+.alternating-text p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .alternating-item {
+        flex-direction: column; /* Фото и текст друг под другом */
+        text-align: center;
+    }
+
+    .alternating-text, .alternating-image {
+        max-width: 100%; /* Увеличиваем ширину для мобильных */
+    }
+
+    .alternating-text {
+        text-align: center; /* Выравнивание текста по центру */
+    }
+}
