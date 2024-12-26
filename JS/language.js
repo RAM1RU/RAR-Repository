@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const translations = {
         en: {
-            /*Main.html*/
+            /*Index.html*/
             burgerMain: 'Main Page',
             burgerProducts: 'Products',
             burgerInterior: 'Interior',
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
             aboutUsInteriorButton: 'View catalog',
         },
         ru: {
-            /*Main.html*/
+            /*Index.html*/
             burgerMain: 'Основная Страница',
             burgerProducts: 'Позиции',
             burgerInterior: 'Интерьер',
