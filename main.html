@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MiaCoffee</title>
+    <link rel="icon" href="Images/new-logo.png" type="image/png">
+    <title>RAR Coffee</title>
+
     <link rel="stylesheet" href="CSS/general.css">
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/hero.css">
@@ -14,141 +16,148 @@
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="CSS/slide-buttons.css">
     <link rel="stylesheet" href="CSS/nav-menu.css">
+    <link rel="stylesheet" href="CSS/scroll-top-button.css">
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+    <script src="JS/AJAX-transition.js" defer></script>
     <script src="JS/interior-gallery.js" defer></script>
     <script src="JS/map.js" defer></script>
     <script src="JS/menu-carousel.js" defer></script>
     <script src="JS/script.js" defer></script>
     <script src="JS/language.js" defer></script>
+    <script src="JS/scroll-top-button.js" defer></script>
 </head>
 
-<body>
-<!-- Header Section -->
-<header>
-    <div class="header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 20px;">
-        <div class="burger-menu" style="margin-right: 20px;">
-            <div class="menu-icon" style="font-size: 24px; cursor: pointer;">☰</div>
+<div id = "content">
+
+    <button id="scrollTopBtn" title="Наверх">↑</button>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container" style="display: flex; align-items: center; justify-content: space-between; padding: 0 20px;">
+            <div class="burger-menu" style="margin-right: 20px;">
+                <div class="menu-icon" style="font-size: 24px; cursor: pointer;">☰</div>
+            </div>
+            <div class="language-selector" style="margin-right: auto;">
+                <button id="language-toggle">EN</button>
+            </div>
+            <div class="social-icons" style="display: flex; gap: 15px;">
+                <a href="https://www.facebook.com/groups/programmingmemes1/?ref=share&mibextid=NSMWBT" target="_blank"><img src="Images/facebook-icon.png" alt="Facebook Icon" class="social-icon" style="width: 25px; height: 25px;"></a>
+                <a href="https://www.instagram.com/mems.video?igsh=MTZtMzAwand5ZjBybQ==" target="_blank"><img src="Images/instagram-icon.png" alt="Instagram Icon" class="social-icon" style="width: 25px; height: 25px;"></a>
+                <a href="#" target="_blank"><i class="linkedin"></i></a>
+            </div>
         </div>
-        <div class="language-selector" style="margin-right: auto;">
-            <button id="language-toggle">EN</button>
+    </header>
+
+    <!-- Logo and Name Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="Images/new-logo.png" alt="MiaCoffee Logo" class="logo">
+            <h1 class="coffee-name">RAR COFFEE</h1>
         </div>
-        <div class="social-icons" style="display: flex; gap: 15px;">
-            <a href="#" target="_blank"><img src="Images/facebook-icon.png" alt="Facebook Icon" class="social-icon" style="width: 25px; height: 25px;"></a>
-            <a href="https://www.instagram.com/coffeemia.az?igsh=MTlmeTduNG9qMzk2aQ==" target="_blank"><img src="Images/instagram-icon.png" alt="Instagram Icon" class="social-icon" style="width: 25px; height: 25px;"></a>
-            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location">
+        <div id="map" style="width: 100%; height: 600px;"></div>
+    </section>
+
+    <!-- Menu Gallery Section -->
+    <section id="menu-gallery" class="menu-gallery">
+        <!-- Заголовок h1 -->
+        <h1 style="text-align: center; margin: 10px 0;" data-translate="menuTitle">Menu & Positions</h1>
+
+        <!-- Разделительная строка с текстом h3 -->
+        <h3 style="text-align: center; margin: 10px 0; font-weight: normal;" data-translate="menuText">Discover the variety of menu items that we offer</h3>
+
+        <!-- Разделительная строка с текстом h2 -->
+        <h2 style="text-align: center; margin: 20px 0;" data-translate="menuOverview">ー Recommendations from our visitors ー</h2>
+
+        <div class="menu-slider-wrapper" style="width: 100%; margin: 0 auto;">
+            <div class="menu-items">
+                <img src="Images/menu-item1.jpg" alt="Menu Item 1" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+                <img src="Images/menu-item2.jpg" alt="Menu Item 2" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+                <img src="Images/menu-item3.jpg" alt="Menu Item 3" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+                <img src="Images/menu-item4.jpg" alt="Menu Item 4" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+                <img src="Images/menu-item5.jpg" alt="Menu Item 5" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+                <img src="Images/menu-item6.jpg" alt="Menu Item 6" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+                <img src="Images/menu-item7.jpg" alt="Menu Item 7" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
+            </div>
         </div>
-    </div>
-</header>
+    </section>
 
-<!-- Logo and Name Section -->
-<section class="hero">
-    <div class="hero-content">
-        <img src="Images/logo.png" alt="MiaCoffee Logo" class="logo">
-        <h1 class="coffee-name">Mia Coffee</h1>
-    </div>
-</section>
+    <!-- Interior Gallery Section -->
+    <section id="interior-gallery" class="interior-gallery">
+        <!-- Заголовок h1 -->
+        <h1 style="text-align: center; margin: 5px 0;" data-translate="interiorTitle">Interior</h1>
 
-<!-- Location Section -->
-<section class="location">
-    <div id="map" style="width: 100%; height: 600px;"></div>
-</section>
+        <!-- Разделительная строка с текстом h3 -->
+        <h3 style="text-align: center; margin: 5px 0; font-weight: normal;" data-translate="interiorText">Elegant interior for a comfortable stay and a wonderful time </h3>
 
-<!-- Menu Gallery Section -->
-<section id="menu-gallery" class="menu-gallery">
-    <!-- Заголовок h1 -->
-    <h1 style="text-align: center; margin: 10px 0;" data-translate="menuTitle">Menu & Positions</h1>
+        <!-- Разделительная строка с текстом h2 -->
+        <h2 style="text-align: center; margin: 10px 0;" data-translate="interiorOverview">ー Interior Review ー</h2>
 
-    <!-- Разделительная строка с текстом h3 -->
-    <h3 style="text-align: center; margin: 10px 0; font-weight: normal;" data-translate="menuText">Discover the variety of menu items that we offer</h3>
-
-    <!-- Разделительная строка с текстом h2 -->
-    <h2 style="text-align: center; margin: 20px 0;" data-translate="menuOverview">ー Recommendations from our visitors ー</h2>
-
-    <div class="menu-slider-wrapper" style="width: 100%; margin: 0 auto;">
-        <div class="menu-items">
-            <img src="Images/menu-item1.jpg" alt="Menu Item 1" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
-            <img src="Images/menu-item2.jpg" alt="Menu Item 2" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
-            <img src="Images/menu-item3.jpg" alt="Menu Item 3" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
-            <img src="Images/menu-item4.jpg" alt="Menu Item 4" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
-            <img src="Images/menu-item5.jpg" alt="Menu Item 5" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
-            <img src="Images/menu-item6.jpg" alt="Menu Item 6" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
-            <img src="Images/menu-item7.jpg" alt="Menu Item 7" class="menu-item" style="width: 150px; height: 450px; object-fit: cover; margin: 0 10px;">
-        </div>
-    </div>
-</section>
-
-<!-- Interior Gallery Section -->
-<section id="interior-gallery" class="interior-gallery">
-    <!-- Заголовок h1 -->
-    <h1 style="text-align: center; margin: 5px 0;" data-translate="interiorTitle">Interior</h1>
-
-    <!-- Разделительная строка с текстом h3 -->
-    <h3 style="text-align: center; margin: 5px 0; font-weight: normal;" data-translate="interiorText">Elegant interior for a comfortable stay and a wonderful time </h3>
-
-    <!-- Разделительная строка с текстом h2 -->
-    <h2 style="text-align: center; margin: 10px 0;" data-translate="interiorOverview">ー Interior Review ー</h2>
-
-    <div id="carousel-container">
-        <div class="carousel">
-            <div class="carousel-item" data-bg="images/interior1.jpg">
-                <img src="Images/interior1.jpg" alt="Interior Photo 1">
-                <div class="carousel-text">
-                    <h2 data-translate="interior1Descript">Cozy Space</h2>
-                    <p data-translate="interior1DescriptText">Relax in our warm and inviting space.</p>
+        <div id="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item" data-bg="images/interior1.jpg">
+                    <img src="Images/interior1.jpg" alt="Interior Photo 1">
+                    <div class="carousel-text">
+                        <h2 data-translate="interior1Descript">Cozy Space</h2>
+                        <p data-translate="interior1DescriptText">Relax in our warm and inviting space.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bg="images/interior2.jpg">
+                    <img src="Images/interior2.jpg" alt="Interior Photo 2">
+                    <div class="carousel-text">
+                        <h2 data-translate="interior2Descript">Modern Design</h2>
+                        <p data-translate="interior2DescriptText">Experience our modern and stylish decor.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bg="images/interior3.jpg">
+                    <img src="Images/interior3.jpg" alt="Interior Photo 3">
+                    <div class="carousel-text">
+                        <h2 data-translate="interior3Descript">Comfort Zone</h2>
+                        <p data-translate="interior3DescriptText">A perfect spot for coffee and relaxation.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bg="images/interior4.jpg">
+                    <img src="Images/interior4.jpg" alt="Interior Photo 4">
+                    <div class="carousel-text">
+                        <h2 data-translate="interior4Descript">Ambient Atmosphere</h2>
+                        <p data-translate="interior4DescriptText">Enjoy the perfect blend of light and ambiance.</p>
+                    </div>
                 </div>
             </div>
-            <div class="carousel-item" data-bg="images/interior2.jpg">
-                <img src="Images/interior2.jpg" alt="Interior Photo 2">
-                <div class="carousel-text">
-                    <h2 data-translate="interior2Descript">Modern Design</h2>
-                    <p data-translate="interior2DescriptText">Experience our modern and stylish decor.</p>
-                </div>
-            </div>
-            <div class="carousel-item" data-bg="images/interior3.jpg">
-                <img src="Images/interior3.jpg" alt="Interior Photo 3">
-                <div class="carousel-text">
-                    <h2 data-translate="interior3Descript">Comfort Zone</h2>
-                    <p data-translate="interior3DescriptText">A perfect spot for coffee and relaxation.</p>
-                </div>
-            </div>
-            <div class="carousel-item" data-bg="images/interior4.jpg">
-                <img src="Images/interior4.jpg" alt="Interior Photo 4">
-                <div class="carousel-text">
-                    <h2 data-translate="interior4Descript">Ambient Atmosphere</h2>
-                    <p data-translate="interior4DescriptText">Enjoy the perfect blend of light and ambiance.</p>
-                </div>
-            </div>
         </div>
-    </div>
-    <div id="background-overlay"></div>
-</section>
+        <div id="background-overlay"></div>
+    </section>
 
-<!-- Footer Section -->
-<footer>
-    <div class="footer-content">
-        <h3 data-translate="footerTitle">Crafted with Love, Served with Care</h3>
-        <div class="footer-columns">
-            <div class="footer-column">
-                <h4 data-translate="footerContact">Contacts</h4>
-                <p data-translate="footerLocation">Azerbaijan, Baku</p>
-                <p>(+994 12) 123 45 67</p>
-                <p><a href="somegmail@gmail.com">somegmail@gmail.com</a></p>
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <h3 data-translate="footerTitle">Crafted with Love, Served with Care</h3>
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4 data-translate="footerContact">Contacts</h4>
+                    <p data-translate="footerLocation">Azerbaijan, Baku</p>
+                    <p>(+994 12) 123 45 67</p>
+                    <p><a href="somegmail@gmail.com">somegmail@gmail.com</a></p>
+                </div>
+                <div class="footer-column">
+                    <h4 data-translate="footerWorkHour">Working Hours</h4>
+                    <p data-translate="footerWorkTime">Stores: 08:00 - 22:00</p>
+                    <p data-translate="footerAddress">Address: 123 Coffee St, Coffee City</p>
+                </div>
             </div>
-            <div class="footer-column">
-                <h4 data-translate="footerWorkHour">Working Hours</h4>
-                <p data-translate="footerWorkTime">Stores: 08:00 - 22:00</p>
-                <p data-translate="footerAddress">Address: 123 Coffee St, Coffee City</p>
-            </div>
+            <p>© 2024 RAR. All rights reserved.<br>
+                Developed by RAM1RU 2024</p>
         </div>
-        <p>© 2024 MIA. All rights reserved.<br>
-            Developed by RAM1RU 2024</p>
-    </div>
-</footer>
-</body>
+    </footer>
+</div>
 
 </html>

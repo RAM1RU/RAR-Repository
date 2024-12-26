@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function () {
     navMenu.style.padding = '2rem';
     navMenu.innerHTML = `
         <ul style="list-style: none; padding: 0;">
-            <li><a href="main.html" class="burger-link" data-translate="burgerMain">Main Page</a> </li>
-            <li><a href="#menu-gallery" class="burger-link" data-translate="burgerProducts">Products</a></li>
-            <li><a href="#interior-gallery" class="burger-link" data-translate="burgerInterior">Interior</a></li>
-            <li><a href="about-us.html" class="burger-link" data-translate="burgerAboutUs">About Us</a></li>
+            <li><a href="main.html" class="nav-link" data-translate="burgerMain">Main Page</a> </li>
+            <li><a href="#menu-gallery" data-translate="burgerProducts">Products</a></li>
+            <li><a href="#interior-gallery" data-translate="burgerInterior">Interior</a></li>
+            <li><a href="about-us.html" class="nav-link" data-translate="burgerAboutUs">About Us</a></li>
         </ul>
     `;
     document.body.appendChild(navMenu);

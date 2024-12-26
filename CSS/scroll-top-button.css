@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 2000px; /* Для теста длинного контента */
+    background: linear-gradient(to bottom, #f0f0f0, #d9d9d9); /* Фон для визуализации */
+}
+
+#scrollTopBtn {
+    display: none; /* Кнопка скрыта по умолчанию */
+    position: fixed; /* Закрепляем на экране */
+    top: 15%; /* Центр экрана */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translate(-50%, -50%); /* Центрирование по обеим осям */
+    z-index: 1000; /* Поверх всего остального */
+    background-color: #555; /* Цвет фона кнопки */
+    color: white; /* Цвет текста (стрелки) */
+    border: none; /* Без рамки */
+    outline: none; /* Без обводки */
+    cursor: pointer; /* Указатель мыши */
+    width: 45px; /* Размер кнопки */
+    height: 45px; /* Размер кнопки */
+    border-radius: 50%; /* Делает кнопку круглой */
+    font-size: 20px; /* Размер стрелки */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Тень для кнопки */
+    opacity: 0; /* По умолчанию невидима */
+    transition: opacity 0.3s ease-in-out; /* Плавное появление */
+}
+
+#scrollTopBtn.show {
+    display: block; /* Показываем кнопку */
+    opacity: 1; /* Делаем её видимой */
+}
+
+#scrollTopBtn:hover {
+    background-color: #333; /* Более тёмный фон при наведении */
+}
