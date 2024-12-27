@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const itemWidth = items[0].offsetWidth + 80; // Ширина одного элемента + отступ
 
     let currentIndex = 1;
+    let startX = 0;
+    let deltaX = 0;
+    let isSwiping = false;
 
     function centerItem(index) {
         const offset = -index * itemWidth + (window.innerWidth - itemWidth) / 2;
@@ -23,16 +26,36 @@ document.addEventListener('DOMContentLoaded', function () {
         overlay.style.opacity = '1';
     }
 
-    function updateHoverTexts(language) {
-        items.forEach((item) => {
-            const title = item.querySelector('h2[data-translate]');
-            const description = item.querySelector('p[data-translate]');
-            if (title && description) {
-                title.textContent = translations[language][title.getAttribute('data-translate')];
-                description.textContent = translations[language][description.getAttribute('data-translate')];
-            }
-        });
+    function handleSwipe() {
+        if (deltaX > 50 && currentIndex > 0) {
+            currentIndex -= 1; // Свайп вправо (показать предыдущий элемент)
+        } else if (deltaX < -50 && currentIndex < items.length - 1) {
+            currentIndex += 1; // Свайп влево (показать следующий элемент)
+        }
+        const bgImage = items[currentIndex].getAttribute('data-bg'); // Получаем фон для текущего элемента
+        updateBackground(bgImage); // Обновляем фон
+        centerItem(currentIndex); // Центрируем элемент
     }
+
+    // Обработчики для жестов
+    carousel.addEventListener('touchstart', (event) => {
+        startX = event.touches[0].clientX;
+        isSwiping = true;
+    });
+
+    carousel.addEventListener('touchmove', (event) => {
+        if (isSwiping) {
+            deltaX = event.touches[0].clientX - startX;
+        }
+    });
+
+    carousel.addEventListener('touchend', () => {
+        if (isSwiping) {
+            handleSwipe();
+            isSwiping = false;
+        }
+        deltaX = 0; // Сбрасываем смещение
+    });
 
     // Добавляем события для наведения на элементы
     items.forEach((item, index) => {
@@ -51,9 +74,4 @@ document.addEventListener('DOMContentLoaded', function () {
     // Устанавливаем начальное положение карусели и дефолтный фон
     centerItem(currentIndex);
     resetBackground();
-
-    // Обновляем тексты для текущего языка при загрузке страницы
-    document.addEventListener('languageChange', (event) => {
-        updateHoverTexts(event.detail.language);
-    });
 });

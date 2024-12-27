@@ -45,3 +45,38 @@ footer {
     line-height: 1.5;
     margin: 1rem 1rem 0 0;
 }
+
+/* Responsive Styles for Footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .footer-columns {
+        flex-direction: column;
+        text-align: center;
+        margin: 1rem 0;
+    }
+
+    .footer-column {
+        margin: 1rem 0;
+    }
+
+    .footer-column h4 {
+        font-size: 1rem;
+    }
+
+    .footer-column p {
+        font-size: 0.8rem;
+    }
+
+    .footer-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .footer-content p {
+        font-size: 0.8rem;
+        margin: 0.5rem;
+    }
+}
